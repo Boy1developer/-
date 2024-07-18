@@ -1,0 +1,3390 @@
+{
+  "author": "",
+  "category": "Movement",
+  "extensionNamespace": "",
+  "fullName": "player animation",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWFuaW1hdGlvbi1wbGF5LW91dGxpbmUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNCwyQTIsMiAwIDAsMCAyLDRWMTRINFY0SDE0VjJINE04LDZBMiwyIDAgMCwwIDYsOFYxOEg4VjhIMThWNkg4TTIwLDEyVjIwSDEyVjEySDIwTTIwLDEwSDEyQTIsMiAwIDAsMCAxMCwxMlYyMEEyLDIgMCAwLDAgMTIsMjJIMjBBMiwyIDAgMCwwIDIyLDIwVjEyQTIsMiAwIDAsMCAyMCwxME0xNCwxM1YxOUwxOCwxNkwxNCwxM1oiIC8+PC9zdmc+",
+  "name": "animation_sprite",
+  "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/39827e75ad7b543580c61a31a46b9d0ceac12ebc153cc3aa9734d4228f1f4850_animation-play-outline.svg",
+  "shortDescription": "set animations of movement",
+  "version": "0.0.7",
+  "description": [
+    "easyest to set animations of movement",
+    "with w a s d move ment"
+  ],
+  "tags": [
+    "animation"
+  ],
+  "authorIds": [
+    "ZAQ6cbLJW6ZcBQERMymnsWO25WF3"
+  ],
+  "dependencies": [
+    {
+      "exportName": "player animation",
+      "name": "player animation",
+      "type": "cordova",
+      "version": "0.0.8"
+    }
+  ],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [],
+  "eventsBasedBehaviors": [
+    {
+      "description": "",
+      "fullName": "player animation platform 2d",
+      "name": "player_animation_platform",
+      "objectType": "Sprite",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "d"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Right\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of fall",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "fall_animation",
+          "sentence": "animation of _PARAM0_ to fall is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsFalling"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "fall"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform",
+              "type": "behavior"
+            },
+            {
+              "description": "fall animation",
+              "name": "fall",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of jump",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "JUMP_animation",
+          "sentence": "animation of _PARAM0_ to jump is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsJumping"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "JUMP"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform",
+              "type": "behavior"
+            },
+            {
+              "description": "jump animation",
+              "name": "JUMP",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of idle",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "idle_animation",
+          "sentence": "animation of _PARAM0_ to idle is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "idle"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform",
+              "type": "behavior"
+            },
+            {
+              "description": "idle animation",
+              "name": "idle",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of move",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "move_animation",
+          "sentence": "animation of _PARAM0_ to move is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "move"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform",
+              "type": "behavior"
+            },
+            {
+              "description": "move animation",
+              "name": "move",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "PlatformBehavior::PlatformerObjectBehavior"
+          ],
+          "name": "Property"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "w a s d controls",
+          "description": "on or off a s d w controls",
+          "group": "control",
+          "extraInformation": [],
+          "name": "Property2"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "",
+      "fullName": "player animation platform 2.5d",
+      "name": "player_animation_platform2",
+      "objectType": "Sprite3D::Sprite3D",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "d"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Right\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite3D::Sprite3D",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform2",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of fall",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "fall_animation",
+          "sentence": "animation of _PARAM0_ to fall is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsFalling"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "fall"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite3D::Sprite3D",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform2",
+              "type": "behavior"
+            },
+            {
+              "description": "fall animation",
+              "name": "fall",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of jump",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "JUMP_animation",
+          "sentence": "animation of _PARAM0_ to jump is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsJumping"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "JUMP"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite3D::Sprite3D",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform2",
+              "type": "behavior"
+            },
+            {
+              "description": "jump animation",
+              "name": "JUMP",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of idle",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "idle_animation",
+          "sentence": "animation of _PARAM0_ to idle is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "idle"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite3D::Sprite3D",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform2",
+              "type": "behavior"
+            },
+            {
+              "description": "idle animation",
+              "name": "idle",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of move",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "move_animation",
+          "sentence": "animation of _PARAM0_ to move is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "move"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite3D::Sprite3D",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform2",
+              "type": "behavior"
+            },
+            {
+              "description": "move animation",
+              "name": "move",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "PlatformBehavior::PlatformerObjectBehavior"
+          ],
+          "name": "Property"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "w a s d controls",
+          "description": "on or off a s d w controls",
+          "group": "control",
+          "extraInformation": [],
+          "name": "Property2"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "",
+      "fullName": "player animation platform 3d",
+      "name": "player_animation_platform_3d",
+      "objectType": "Scene3D::Model3DObject",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "d"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Right\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform_3d",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of fall",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "fall_animation",
+          "sentence": "animation of _PARAM0_ to fall is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsFalling"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "fall"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "fall animation",
+              "name": "fall",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of jump",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "JUMP_animation",
+          "sentence": "animation of _PARAM0_ to jump is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsJumping"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "JUMP"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "jump animation",
+              "name": "JUMP",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of idle",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "idle_animation",
+          "sentence": "animation of _PARAM0_ to idle is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "idle"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle animation",
+              "name": "idle",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "chouse animation of move",
+          "fullName": "",
+          "functionType": "Action",
+          "name": "move_animation",
+          "sentence": "animation of _PARAM0_ to move is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PlatformBehavior::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlatformBehavior::PlatformerObjectBehavior::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "move"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_platform_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "move animation",
+              "name": "move",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "PlatformBehavior::PlatformerObjectBehavior"
+          ],
+          "name": "Property"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "w a s d controls",
+          "description": "on or off a s d w controls",
+          "group": "control",
+          "extraInformation": [],
+          "name": "Property2"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "",
+      "fullName": "player animation topdown 2d",
+      "name": "player_animation_top_down_2d",
+      "objectType": "Sprite",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "d"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Right"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "no"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "a"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Flippable",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "change idle animation",
+          "fullName": "",
+          "functionType": "Action",
+          "group": "SMPILE ANIMATION",
+          "name": "idle",
+          "sentence": "change idle animation of _PARAM0_ is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "idle_animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle animation",
+              "name": "idle_animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "change walk animation",
+          "fullName": "Walk ainimation",
+          "functionType": "Action",
+          "group": "SMPILE ANIMATION",
+          "name": "walk",
+          "sentence": "change walk animation of _PARAM0_ is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "run_animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "walk animation",
+              "name": "run_animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking right ",
+          "fullName": "right walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_right",
+          "sentence": "choose animation of Right move _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Right\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "right walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling right ",
+          "fullName": "idle animation right",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_right",
+          "sentence": "choose animation of Right idle _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking left",
+          "fullName": "left walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_LEFT",
+          "sentence": "choose animation of left move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "left walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling left",
+          "fullName": "idle left animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_LEFT",
+          "sentence": "choose animation of left idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking up",
+          "fullName": "up walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_up",
+          "sentence": "choose animation of up move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Up\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "up walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling up",
+          "fullName": "up idle animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_up",
+          "sentence": "choose animation of up idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "up idle animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking down",
+          "fullName": "down walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_down",
+          "sentence": "choose animation of down move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Down\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "down walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling down",
+          "fullName": "down idle animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_down",
+          "sentence": "choose animation of down idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Sprite",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_2d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "TopDownMovementBehavior::TopDownMovementBehavior"
+          ],
+          "name": "Property"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "w a s d controls",
+          "description": "on or off a s d w controls",
+          "group": "control",
+          "extraInformation": [],
+          "name": "Property2"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    },
+    {
+      "description": "",
+      "fullName": "player animation topdown 3d",
+      "name": "player_animation_top_down_3d",
+      "objectType": "Scene3D::Model3DObject",
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "doStepPreEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateDownKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateUpKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "animation_sprite::player_animation_top_down_2d::PropertyProperty2"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Behavior"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "change idle animation",
+          "fullName": "",
+          "functionType": "Action",
+          "group": "SMPILE ANIMATION",
+          "name": "idle",
+          "sentence": "change idle animation of _PARAM0_ is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "idle_animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle animation",
+              "name": "idle_animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "change walk animation",
+          "fullName": "Walk ainimation",
+          "functionType": "Action",
+          "group": "SMPILE ANIMATION",
+          "name": "walk",
+          "sentence": "change walk animation of _PARAM0_ is _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "run_animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "walk animation",
+              "name": "run_animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking right ",
+          "fullName": "right walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_right",
+          "sentence": "choose animation of Right move _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Right\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "right walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling right ",
+          "fullName": "idle animation right",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_right",
+          "sentence": "choose animation of Right idle _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"right\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking left",
+          "fullName": "left walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_LEFT",
+          "sentence": "choose animation of left move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "left walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling left",
+          "fullName": "idle left animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_LEFT",
+          "sentence": "choose animation of left idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking up",
+          "fullName": "up walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_up",
+          "sentence": "choose animation of up move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Up\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "up walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling up",
+          "fullName": "up idle animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_up",
+          "sentence": "choose animation of up idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"up\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "up idle animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of walking down",
+          "fullName": "down walk animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "walk_down",
+          "sentence": "choose animation of down move  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::TopDownMovementBehavior::IsUsingControl"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property",
+                    "\"Down\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "down walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "choose animation of idling down",
+          "fullName": "down idle animation",
+          "functionType": "Action",
+          "group": "anmation movement",
+          "name": "idle_down",
+          "sentence": "choose animation of down idle  _PARAM0_ set to _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjetTxt"
+                  },
+                  "parameters": [
+                    "Object",
+                    "move",
+                    "=",
+                    "\"down\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "TopDownMovementBehavior::IsMoving"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Property"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Object",
+                    "Animation",
+                    "=",
+                    "animation"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "animation_sprite::player_animation_top_down_3d",
+              "type": "behavior"
+            },
+            {
+              "description": "idle walk animation",
+              "name": "animation",
+              "type": "objectAnimationName"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Behavior",
+          "label": "",
+          "description": "",
+          "group": "",
+          "extraInformation": [
+            "TopDownMovementBehavior::TopDownMovementBehavior"
+          ],
+          "name": "Property"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "w a s d controls",
+          "description": "on or off a s d w controls",
+          "group": "control",
+          "extraInformation": [],
+          "name": "Property2"
+        }
+      ],
+      "sharedPropertyDescriptors": []
+    }
+  ],
+  "eventsBasedObjects": []
+}
